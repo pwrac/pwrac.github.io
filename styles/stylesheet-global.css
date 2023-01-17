@@ -15,7 +15,8 @@ body {
   font-family: "Readex Pro", sans-serif;
   font-size: 24px;
   line-height: 1.25rem;
-  text-size-adjust: none;
+  display: flex;
+  justify-content: center;
 }
 
 .img-left-float {
@@ -33,7 +34,8 @@ body {
 @media (max-width: 576px) {
   .sololinks-container {
     height: 99vh;
-    margin: 0 auto;
+    width: 506px;
+    margin: 0;
     border: none;
     box-shadow: none;
   }
@@ -42,13 +44,18 @@ body {
 @media (min-width: 577px) {
   .sololinks-container {
     height: 520px;
-    margin: calc((90vh - 520px) / 2) auto;
+    width: 600px;
+    margin: calc((90vh - 520px) / 2);
     border-radius: 10px;
     box-shadow: -20px 20px #222;
   }
 }
 
 .sololinks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background: var(--pallete-fg);
   min-width: 330px;
   max-width: 600px;
@@ -56,11 +63,14 @@ body {
   padding-bottom: 10px;
 }
 
+.sololinks-container div {
+  display: flex;
+  width: 330px;
+}
+
 .sololinks-header {
   margin: 24px auto;
-  width: 330px;
   height: 128px;
-  text-size-adjust: none;
 }
 
 .sololinks-header > h1 {
@@ -70,22 +80,23 @@ body {
 }
 
 .sololinks-list {
-  list-style-type: none;
   padding: 0;
   text-align: center;
+  flex-direction: column;
 }
 
-.sololinks-list > li {
+.sololinks-list div {
   margin: 0 auto;
-  width: 330px;
   background: var(--pallete-bg);
   margin-bottom: 12px;
   border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .sololinks-list a {
   padding: 12px 0;
-  display: block;
   text-decoration: none;
   transition: ease 0.25s;
   color: #ffffff;
@@ -97,10 +108,8 @@ body {
 }
 
 .rainbow-band {
-  position: relative;
-  top: 0;
   height: 10px;
-  width: 100%;
+  width: 100% !important;
   margin: 0 0;
   background: linear-gradient(
     90deg,
